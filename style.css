@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @font-face{
     font-family: 'Canela-Deck';
@@ -15,8 +15,10 @@
     --gray-color:#F6F6F6;
 }
 body{
-     font-family: "Poppins", sans-serif;
-     font-weight: 400;
+    font-family: "Poppins", sans-serif;
+}
+p{
+    font-weight:300
 }
 .bg-primary{
     background-color: var(--primary-color) !important;
@@ -46,13 +48,15 @@ body{
     font-weight: 500;
 }
 .theme-btn{
-    background-color: var(--yellow-color);
+    background-color: var(--primary-color);
+    color: var(--yellow-color);
+    border:1px solid  var(--yellow-color);
     border-radius: 30px 0 30px 0;
     padding: 10px 20px;
 }
 .theme-btn:hover{
-    background-color: var(--primary-color);
-    color: var(--yellow-color);
+    background-color: var(--yellow-color);
+    color: var(--primary-color);
 }
 .navbar-brand img{
     max-width: 160px !important
@@ -65,6 +69,7 @@ body{
 .fs-canela-deck{
     font-family:'Canela-Deck';
     font-weight: 700;
+    letter-spacing: 1px;
 }
 .fs-canela{
     font-family:'Canela';
@@ -97,20 +102,20 @@ body{
     width: 0%;    
 }
 .carousel-control-prev {
-    left: 15%;
+    left: 17%;
 }
 .carousel-control-next {
-    left: 18%;
+    left: 20%;
 }
 .carousel-indicators{
     display: none;
 }
 @media (max-width:768px){
     .carousel>button{
-        top:220px;
+        top:24vw;
     }
     .carousel-control-next {
-        left: 20%;
+        left: 22%;
     }
 }
 @media (max-width:500px){
@@ -141,9 +146,10 @@ body{
 
 .aboutUs{
     border-radius: 100px 0 100px 0;
-    height: 600px;
+    height: 480px;
     top: -50px;
     position: relative;
+    overflow: hidden;
 }
 .before-dash{
     position: relative;
@@ -157,18 +163,31 @@ body{
     top: 0;
 }
 .aboutUs .outline{
-    right: 40px;
+    right: 90px;
     top: -30px;
-    width: 280px;
-    height: 350px;
+    width: 250px;
+    height: 300px;
 }
 .aboutUs .image1{
-    width: 300px;
+    width: 250px;
 }
 .aboutUs .image2{
-    width: 150px;
-    top: 250px;
-    left: -60px;
+    width: 100px;
+    top: 220px;
+    left: -50px;
+}
+.tissue{
+    bottom: -5%;
+    left: -10%;
+}
+.aboutUs img.bottom{
+    z-index: 1;
+    bottom: -50px;
+    right: -50px;
+    width: 500px;
+}
+.aboutUs *{
+    z-index: 2;
 }
 
 @media (max-width:768px) {
@@ -181,6 +200,9 @@ body{
     }
     .aboutUs .image2{
         left: 40px;
+    }
+    .aboutUs img.bottom{
+        width: 400px;
     }
 }
 
@@ -208,6 +230,15 @@ body{
         font-size: 50px;
         line-height: 20px;
     }
+    .tissue{
+        height: 150px;
+        width: 150px;
+        bottom: -5%;
+        left: -10%;
+    }
+    .aboutUs img.bottom{
+        width: 300px;
+    }
 }
 
 
@@ -224,7 +255,6 @@ body{
     border-radius: 30px 0;
 }
 .packaging .inner{
-    
     border-radius:50%;
 }
 .custom-prev, .custom-next {
@@ -243,20 +273,20 @@ body{
     border-radius: 50%;
     font-weight: 100;
     font-family: none;
-  }
+}
 
-  .custom-prev {
+.custom-prev {
     left: 10px;
-  }
+}
 
-  .custom-next {
+.custom-next {
     right: 10px;
-  }
+}
 
-  .custom-prev:hover, .custom-next:hover{
+.custom-prev:hover, .custom-next:hover{
     background-color: var(--primary-color);
     color: var(--gray-color) !important;
-  }
+}
 
 
 
@@ -268,10 +298,9 @@ body{
     padding:2% 3%;
     border-right: 1px dashed gray;
 }
-
-@media (min-width:768px){
+@media (min-width:769px){
     .clientList div:last-child{
-        border: none;
+        border-right: none;
     }
 }
 
@@ -290,9 +319,21 @@ body{
 }
 
 
+.manufacturingSection{
+    overflow: hidden;
+}
 
+.manufacturingSection .top{
+    left: 0;
+    top: -50px;
+    opacity: 0.5;
+}
+.manufacturingSection .bottom{
+    right: -50px;
+    bottom: -50px;
+    opacity: 0.5;
 
-
+}
 .manufacturing div{
     margin: 20px;
 }
@@ -300,23 +341,48 @@ body{
     height: 300px;
     width: 300px;
 }
-
+@media (max-width:768px){
+    .manufacturing img{
+        height: 200px;
+        width: 200px;
+    }
+    .manufacturingSection .top,.manufacturingSection .bottom{
+        width: 50% ;
+    }
+}
+@media (max-width:500px){
+    .manufacturing div{
+        margin: 10px;
+        font-size: 14px;
+    }
+    .manufacturing img{
+        height: 100px;
+        width: 100px;
+    }
+  
+}
 form input,form textarea{
-    border: 1.5px solid rgba(70, 69, 69, 0.478);
+    border: 1.5px solid rgba(93, 93, 93, 0.177);
     border-radius: 4px;
 }
 footer{
     background-color: #DFE8FF;
+    overflow: hidden;
+    
 }
 .footerContact{
     background-color: #04277D;
     top: -80px;
+    left: -40px;
 }
 .footerContact img{
     width: 200px;
     bottom: 50px;
     left: 50%;
     transform: translateX(-50%);
+}
+.footerContact i{
+    font-size: 20px;
 }
 .icons a{
     color: var(--primary-color);
@@ -327,4 +393,33 @@ footer{
     line-height: 30px;
     text-align: center;
     border-radius: 50%;
+}
+footer .tissue2{
+    right: -10% ;
+    bottom: -20% ;
+}
+
+footer p{
+    font-weight: 300;
+}
+footer i{
+    font-weight: 100;
+}
+
+@media (max-width:768px){
+    footer .tissue2{
+        right: 0% ;
+        bottom: -0% ;
+        height: 120px;
+        width: 120px;
+    }
+    .footerContact{
+        left: 0px;
+    }
+}
+@media (max-width:500px){
+    footer .tissue2{
+        right: -2% ;
+        bottom: -5% ;
+    }
 }
