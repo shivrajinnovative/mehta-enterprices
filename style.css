@@ -18,7 +18,7 @@ body{
     font-family: "Poppins", sans-serif;
 }
 p{
-    font-weight:300
+    font-weight:400
 }
 .bg-primary{
     background-color: var(--primary-color) !important;
@@ -74,9 +74,6 @@ p{
 .fs-canela{
     font-family:'Canela';
     font-weight: 500;
-}
-.container-fluid{
-    max-width: 1640px;
 }
 @media (max-width:500px){
     .navbar-brand img{
