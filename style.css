@@ -29,6 +29,9 @@ p{
 .bg-secondary{
     background-color: var(--gray-color) !important;
 }
+.bg-primary-light{
+background-color: #ECF1FF !important;
+}
 .bg-warning{
     background-color: var(--yellow-color) !important;
 }
@@ -112,17 +115,22 @@ transform: scale(1.02);
 
 
 
-
-
 .carousel-caption {
     text-align: start;
+    bottom: 50%;
+    transform: translateY(50%);
+}
+.carousel{
+    position: relative;
 }
 .carousel>button{
-    top:300px;
+    height: 10px;
+    position: absolute !important;
+    top: auto;
+    bottom: 5vw;
     opacity: 1;
     font-size: 24px;
 }
-
 .carousel-control-next, .carousel-control-prev{
     width: 0%;    
 }
@@ -137,7 +145,7 @@ transform: scale(1.02);
 }
 @media (max-width:768px){
     .carousel>button{
-        top:24vw;
+        bottom:3vw;
     }
     .carousel-control-next {
         left: 22%;
@@ -156,7 +164,7 @@ transform: scale(1.02);
         font-size: 12px;
     }
     .carousel>button{
-        top:30px;
+        bottom:20px;
         font-size: 14px;
     }
     .carousel-control-next {
@@ -171,7 +179,7 @@ transform: scale(1.02);
 
 .aboutUs{
     border-radius: 100px 0 100px 0;
-    height: 480px;
+    height: 420px;
     top: -50px;
     position: relative;
     overflow: hidden;
@@ -277,6 +285,13 @@ transform: scale(1.02);
     width: 230px;
     display: flex;
     margin: auto;
+    overflow: hidden;
+}
+.owl-carousel .inner:hover{
+    border:4px solid var(--yellow-color);
+}
+.owl-carousel .inner:hover~p{
+    color:var(--primary-color);
 }
 .products .inner{
     border-radius: 30px 0;
@@ -363,10 +378,15 @@ transform: scale(1.02);
 }
 .manufacturing div{
     margin: 20px;
+    z-index: 1;
 }
 .manufacturing img{
     height: 300px;
     width: 300px;
+    transition: all .3s;
+}
+.manufacturing img:hover{
+    transform: scale(1.05);
 }
 @media (max-width:768px){
     .manufacturing img{
@@ -411,9 +431,9 @@ footer{
 .footerContact i{
     font-size: 20px;
 }
-.icons a{
-    color: var(--primary-color);
-    background-color: var(--yellow-color);
+.icons i{
+    background-color: var(--primary-color);
+    color: var(--yellow-color);
     height: 30px;
     width: 30px;
     font-size: 20px;
@@ -421,13 +441,23 @@ footer{
     text-align: center;
     border-radius: 50%;
 }
+.icons p{
+    font-size: 14px;
+}
 footer .tissue2{
     right: -10% ;
     bottom: -20% ;
 }
-
 footer p{
     font-weight: 300;
+}
+footer a.text-white{
+    transition: all .7s;
+}
+footer a.text-white:hover{
+    color: var(--yellow-color) !important;
+    padding-left: 8px;
+    background-color: var(--primary-color);
 }
 footer i{
     font-weight: 100;
@@ -462,11 +492,11 @@ footer i{
         position: absolute;
     }
 }
-.owl-nav{
+.manufacturingPage .owl-nav{
     text-align: end;
     padding-right: 5%;
 }
-.owl-nav button{
+.manufacturingPage .owl-nav button{
     color: white !important;
     font-size: 30px !important;
     width: 30px;
@@ -491,4 +521,70 @@ footer i{
 }
 .lb-data .lb-close{
     background-size: 60% 60%;
+}
+
+.productsPage div{
+    margin: 10px;
+    text-align: center;
+}
+.productsPage p{
+    margin-top: 10px;
+}
+.productsPage  a{
+    height: 220px;
+    width: 220px;
+    margin: 10px;
+    border: .3px solid rgba(202, 202, 202, 0.599);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.productsPage  a img{
+    height: 90%;
+    width: 90%;
+    object-fit:contain
+}
+
+@media (max-width:1024px){
+    .productsPage div a{
+        height: 180px;
+        width: 180px;
+    }
+  
+}
+
+@media (max-width:768px){
+    .productsPage>div{
+        width: 150px;
+    }
+    .productsPage div a{
+        height: 150px;
+        width: 150px;
+    }
+
+}
+
+@media (max-width:500px){
+    .productsPage>div{
+        width: 120px;
+    }
+
+    .productsPage p{
+        font-size: 14px !important;
+    }
+    .productsPage div a{
+        height: 120px;
+        width: 120px;
+    }
+  
+}
+
+.position-relative .position-absolute.top-50{
+    transform: translateY(-50%) !important;
+}
+@media (max-width:500px){
+    
+.position-absolute h3.bg-white{
+    font-size: 14px !important;
+}
 }
